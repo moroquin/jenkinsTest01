@@ -6,7 +6,7 @@ pipeline {
   }
 
   environment {
-    ARTIFACT_ID = "sierraoe/webapp:1"
+    ARTIFACT_ID = "sierraoe/webapp:${env.BUILD_NUMBER}"
   }
 
   stages {
