@@ -26,7 +26,7 @@ pipeline {
     }
     stage('Publish') {
       when {
-        branch 'master'
+        branch 'main'
       }
       steps {
         script {
@@ -38,7 +38,7 @@ pipeline {
     }
     stage('Schedule Staging Deployment') {
       when {
-        branch 'master'
+        branch 'main'
       }
       steps {
         build job: 'deploy-webapp-staging', parameters: [string(name: 'ARTIFACT_ID', value: "${env.ARTIFACT_ID}")], wait: false
